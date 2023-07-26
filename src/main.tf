@@ -13,6 +13,10 @@ resource "aws_instance" "base" {
   root_block_device {
     encrypted = true
   }
+
+  metadata_options {
+    http_tokens = "required"
+  }
 }
 
 resource "aws_eip" "base" {
